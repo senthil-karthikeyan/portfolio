@@ -13,7 +13,7 @@ export function Footer() {
       <div className="p-container footer-row-poster">
         <div className="p-f-left">
           <div className="p-f-brand">
-            {siteConfig.name.toUpperCase()} // SOFTWARE SYSTEMS & ENGINEERING
+            {siteConfig.name.toUpperCase()} {`//`} SOFTWARE SYSTEMS & ENGINEERING
           </div>
           <div className="p-f-sub">
             Swiss typographic grid & monolithic composition. Built with Next.js 16 & TypeScript.

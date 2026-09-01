@@ -59,10 +59,7 @@ export function WorkSection() {
   });
 
   useEffect(() => {
-    if (!isWaveActive) {
-      setBarHeights(new Array(16).fill(10));
-      return;
-    }
+    if (!isWaveActive) return;
 
     const interval = setInterval(() => {
       setBarHeights(
@@ -76,6 +73,10 @@ export function WorkSection() {
 
     return () => clearInterval(interval);
   }, [isWaveActive]);
+
+  const displayedBarHeights = isWaveActive
+    ? barHeights
+    : [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
 
   // 3. Interactive Notes Board Checkboxes
   const [notesItems, setNotesItems] = useState([
@@ -259,7 +260,7 @@ export function WorkSection() {
                             className="poster-wave-container"
                             aria-label="Audio Equalizer Visualizer"
                           >
-                            {barHeights.map((h, i) => (
+                            {displayedBarHeights.map((h, i) => (
                               <span
                                 key={i}
                                 className="pw-bar"

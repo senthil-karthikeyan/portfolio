@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     organization: "Mako IT Lab",
     location: "Chennai",
     dateRange: "OCTOBER 2024 — JUNE 2026",
-    status: "active",
+    status: "completed",
     description:
       "Delivered 16+ production applications and enterprise platform extensions across healthcare, project management, geospatial analytics, recruitment, and workflow automation, contributing from requirements and system design through development and production deployment.",
     achievements: [

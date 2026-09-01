@@ -42,7 +42,7 @@ export function ExperienceSection() {
                     <span className="pulse-dot-green" aria-hidden="true" />
                   )}
                   <span>
-                    {exp.dateRange} // [{exp.status === "active" ? "ACTIVE ROLE" : "COMPLETED"}]
+                    {`${exp.dateRange} // ${exp.status === "active" ? "ACTIVE ROLE" : "COMPLETED"}`}
                   </span>
                 </div>
               </div>
