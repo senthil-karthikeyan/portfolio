@@ -26,7 +26,7 @@ export function SystemTelemetry({ onCopyEmail }: SystemTelemetryProps) {
   useEffect(() => {
     const targets = {
       experience: 2,
-      apps: 3,
+      apps: 6,
       latency: 50,
       typesafe: 100,
     };

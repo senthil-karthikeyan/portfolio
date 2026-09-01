@@ -92,6 +92,41 @@ export function WorkSection() {
     );
   };
 
+  // 4. Face Animate Landmark Simulation
+  const [facePoints, setFacePoints] = useState([
+    { x: 30, y: 35 }, { x: 70, y: 35 }, { x: 50, y: 55 },
+    { x: 38, y: 75 }, { x: 50, y: 78 }, { x: 62, y: 75 }
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFacePoints([
+        { x: 30 + (Math.random() * 4 - 2), y: 35 + (Math.random() * 4 - 2) },
+        { x: 70 + (Math.random() * 4 - 2), y: 35 + (Math.random() * 4 - 2) },
+        { x: 50 + (Math.random() * 4 - 2), y: 55 + (Math.random() * 3 - 1.5) },
+        { x: 38 + (Math.random() * 4 - 2), y: 75 + (Math.random() * 4 - 2) },
+        { x: 50 + (Math.random() * 4 - 2), y: 78 + (Math.random() * 4 - 2) },
+        { x: 62 + (Math.random() * 4 - 2), y: 75 + (Math.random() * 4 - 2) }
+      ]);
+    }, 400);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // 5. Miro Collaborative Cursors
+  const [cursorPos, setCursorPos] = useState({ x: 65, y: 40 });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCursorPos({
+        x: Math.floor(Math.random() * 60) + 20,
+        y: Math.floor(Math.random() * 60) + 20,
+      });
+    }, 1800);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="work"
@@ -198,7 +233,7 @@ export function WorkSection() {
                     </div>
 
                     <div className="mockup-content">
-                      {/* Karu Screenplay Mockup */}
+                      {/* 1. Karu Screenplay Mockup */}
                       {project.mockup.type === "screenplay" && (
                         <div className="screenplay-interactive">
                           <div className="sc-slug">INT. SCREENPLAY STUDIO - NIGHT</div>
@@ -216,7 +251,7 @@ export function WorkSection() {
                         </div>
                       )}
 
-                      {/* VoxPulse Equalizer Mockup */}
+                      {/* 2. VoxPulse Equalizer Mockup */}
                       {project.mockup.type === "equalizer" && (
                         <div>
                           <div
@@ -249,7 +284,7 @@ export function WorkSection() {
                         </div>
                       )}
 
-                      {/* Notes Interactive Board Mockup */}
+                      {/* 3. Notes Interactive Board Mockup */}
                       {project.mockup.type === "notes" && (
                         <div className="interactive-notes-board">
                           {notesItems.map((note) => (
@@ -275,6 +310,90 @@ export function WorkSection() {
                           ))}
                           <div className="note-hint-label">
                             [CLICK TO TOGGLE TASK STATE]
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 4. Face Animate 3D Landmark Mesh Mockup */}
+                      {project.mockup.type === "face-animate" && (
+                        <div style={{ position: "relative", minHeight: "130px", background: "#0D0E12", border: "1px solid #27272A", padding: "0.75rem", fontFamily: "var(--font-mono)" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.65rem", color: "#60A5FA", marginBottom: "0.5rem" }}>
+                            <span>MEDIAPIPE 468 MESH</span>
+                            <span>BLENDSHAPES: 52</span>
+                          </div>
+                          <div style={{ position: "relative", height: "80px", border: "1px dashed rgba(255,255,255,0.15)" }}>
+                            {facePoints.map((pt, idx) => (
+                              <div
+                                key={idx}
+                                style={{
+                                  position: "absolute",
+                                  left: `${pt.x}%`,
+                                  top: `${pt.y}%`,
+                                  width: "6px",
+                                  height: "6px",
+                                  background: idx < 2 ? "#60A5FA" : idx === 2 ? "#10B981" : "#F59E0B",
+                                  borderRadius: "50%",
+                                  transform: "translate(-50%, -50%)",
+                                  transition: "all 0.35s ease",
+                                  boxShadow: "0 0 6px rgba(96,165,250,0.8)"
+                                }}
+                              />
+                            ))}
+                            <div style={{ position: "absolute", bottom: "4px", right: "6px", fontSize: "0.58rem", color: "#A1A1AA" }}>
+                              R3F / SHADER VERTEX PASS
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 5. Movie Universe Cinema Database Mockup */}
+                      {project.mockup.type === "movie-universe" && (
+                        <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.78rem" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #E5E7EB", paddingBottom: "0.4rem", marginBottom: "0.6rem" }}>
+                            <span style={{ fontWeight: 800 }}>CINEMA ARCHIVE // TOP PICKS</span>
+                            <span style={{ color: "#0038FF", fontWeight: 800 }}>IMDb 8.9 ★</span>
+                          </div>
+                          <div style={{ display: "flex", gap: "0.4rem", marginBottom: "0.6rem", flexWrap: "wrap" }}>
+                            <span style={{ background: "var(--post-black)", color: "#fff", padding: "0.15rem 0.45rem", fontSize: "0.65rem", fontWeight: 700 }}>SCI-FI</span>
+                            <span style={{ background: "#E5E7EB", padding: "0.15rem 0.45rem", fontSize: "0.65rem", fontWeight: 700 }}>DIRECTOR: NOLAN</span>
+                            <span style={{ background: "#E5E7EB", padding: "0.15rem 0.45rem", fontSize: "0.65rem", fontWeight: 700 }}>4K HDR</span>
+                          </div>
+                          <div style={{ fontSize: "0.68rem", color: "var(--post-muted)", borderTop: "1px dashed #D1D5DB", paddingTop: "0.4rem" }}>
+                            EDGE HYDRATION • FRAMER MOTION TRANSITIONS
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 6. Miro Collaborative Whiteboard Mockup */}
+                      {project.mockup.type === "miro" && (
+                        <div style={{ position: "relative", minHeight: "130px", background: "#FAF9F5", border: "1px solid var(--post-border)", padding: "0.75rem", fontFamily: "var(--font-mono)" }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.65rem", fontWeight: 800, color: "var(--post-blue)", marginBottom: "0.5rem" }}>
+                            <span>BOARD // SPRINT_PLANNING</span>
+                            <span>LIVEBLOCKS SYNC</span>
+                          </div>
+                          <div style={{ position: "relative", height: "80px", background: "#FFFFFF", border: "1px dashed #D1D5DB", overflow: "hidden" }}>
+                            {/* Sticky Note */}
+                            <div style={{ position: "absolute", left: "12%", top: "15%", background: "#FEF08A", border: "1px solid #CA8A04", padding: "0.25rem 0.45rem", fontSize: "0.58rem", fontWeight: 700 }}>
+                              Sticky: Architecture
+                            </div>
+                            {/* Remote Cursor */}
+                            <div
+                              style={{
+                                position: "absolute",
+                                left: `${cursorPos.x}%`,
+                                top: `${cursorPos.y}%`,
+                                transform: "translate(0, 0)",
+                                transition: "all 0.9s cubic-bezier(0.16, 1, 0.3, 1)",
+                                pointerEvents: "none",
+                              }}
+                            >
+                              <div style={{ display: "flex", alignItems: "center", gap: "2px" }}>
+                                <span style={{ color: "#0038FF", fontSize: "0.8rem", lineHeight: 1 }}>▲</span>
+                                <span style={{ background: "#0038FF", color: "#FFFFFF", fontSize: "0.55rem", padding: "1px 4px", fontWeight: 800 }}>
+                                  Collab_Dev_02
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       )}

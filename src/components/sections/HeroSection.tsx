@@ -85,7 +85,7 @@ export function HeroSection({ onNavigate, onCopyEmail }: HeroSectionProps) {
                   <span>VOL. 26</span>
                 </div>
                 <p className="poster-lead">
-                  Software Engineer with <strong>2 years of professional experience</strong> engineering modern full-stack web applications, scalable Go &amp; Python backend microservices, real-time streaming APIs, and production-ready products.
+                  Software Engineer with <strong>2+ years of professional experience</strong> engineering modern full-stack web applications, scalable backend microservices in Node.js, Go &amp; Python, real-time streaming APIs, and production-ready products.
                 </p>
 
                 <div className="poster-btn-group">
@@ -117,7 +117,7 @@ export function HeroSection({ onNavigate, onCopyEmail }: HeroSectionProps) {
                 </div>
                 <div className="meta-item">
                   <span className="m-lbl">SPECIALTY:</span>
-                  <span className="m-val">React / Next.js / Go / FastAPI</span>
+                  <span className="m-val">TypeScript / Node.js / Go / Next.js</span>
                 </div>
               </div>
             </TiltCard>

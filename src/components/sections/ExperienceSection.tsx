@@ -29,7 +29,9 @@ export function ExperienceSection() {
               <div className="exp-card-header">
                 <div>
                   <h3 className="exp-h3">{exp.title}</h3>
-                  <span className="exp-sub-org">{exp.organization}</span>
+                  <span className="exp-sub-org">
+                    {exp.organization} — {exp.location}
+                  </span>
                 </div>
                 <div
                   className={`exp-dates-badge ${

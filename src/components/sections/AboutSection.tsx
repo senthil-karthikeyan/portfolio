@@ -60,7 +60,7 @@ export function AboutSection() {
           {/* Right Narrative */}
           <div className="about-narrative-monolith anim-about-text">
             <p className="p-body-lg">
-              Hi, I&apos;m <strong>Senthil K</strong>, a Software Engineer with 2 years of experience building modern web applications, backend systems, APIs, and production-ready products.
+              Hi, I&apos;m <strong>Senthil K</strong>, a Software Engineer with 2+ years of professional experience building modern web applications, backend systems, APIs, and production-ready products.
             </p>
             <p className="p-body-lg">
               I enjoy turning complex problems into clean, reliable, and maintainable software. I prioritize mathematical structural clarity, sound architecture, and resilient system boundaries. From designing responsive client interfaces in React and Next.js to engineering high-concurrency Go microservices, database schemas, and audio machine learning APIs — every line of code is written to endure.
