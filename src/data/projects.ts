@@ -141,7 +141,7 @@ export const projects: Project[] = [
     sourceUrl: "https://github.com/senthil-karthikeyan/notes",
     mockup: {
       type: "notes",
-      header: "notes-app.vercel.app",
+      header: "notes-trackers-app.vercel.app",
       badge: "EDGE RUNTIME",
     },
   },
