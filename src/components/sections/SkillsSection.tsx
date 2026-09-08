@@ -28,7 +28,7 @@ export function SkillsSection() {
             </span>
           </div>
           <div className="psi-meta">
-            5 DOMAINS // 24+ PRODUCTION TECHNOLOGIES
+            6 DOMAINS // PRODUCTION TECHNOLOGIES
           </div>
         </div>
 

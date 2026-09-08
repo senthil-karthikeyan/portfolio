@@ -39,15 +39,14 @@ export function ContactSection({ onCopyEmail }: ContactSectionProps) {
             {/* Email */}
             <div className="p-dir-item" role="listitem">
               <span className="pdk">01/ DIRECT EMAIL</span>
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                <a href={`mailto:${siteConfig.email}`}>
+              <div className="p-dir-action">
+                <a href={`mailto:${siteConfig.email}`} className="p-dir-link">
                   {siteConfig.email}
                 </a>
                 <button
                   type="button"
                   onClick={handleCopy}
-                  className="btn-poster-wire"
-                  style={{ padding: "0.35rem 0.75rem", fontSize: "0.72rem" }}
+                  className="btn-poster-wire p-copy-btn"
                   aria-label="Copy email address to clipboard"
                 >
                   [ COPY 📋 ]
