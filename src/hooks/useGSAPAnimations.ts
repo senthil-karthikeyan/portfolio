@@ -30,16 +30,7 @@ export function useGSAPAnimations() {
         const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
         heroTl
-          .from(
-            ".poster-interactive-matrix",
-            {
-              opacity: 0,
-              x: isMobile ? 0 : 30,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.6",
-          )
+
           .from(".poster-header", {
             y: -30,
             opacity: 0,
@@ -71,6 +62,16 @@ export function useGSAPAnimations() {
             {
               opacity: 0,
               y: 30,
+              duration: 0.8,
+              ease: "power3.out",
+            },
+            "-=0.6",
+          )
+          .from(
+            ".poster-interactive-matrix",
+            {
+              opacity: 0,
+              x: isMobile ? 0 : 30,
               duration: 0.8,
               ease: "power3.out",
             },
